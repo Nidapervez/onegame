@@ -6,53 +6,128 @@
     <title>Nidzgames</title>
 
     <!-- Include Tailwind CSS -->
- 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background for the entire page */
+            color: #fff; /* White text color */
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #6a0dad; /* Purple background for the navigation bar */
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff; /* White text color for navigation links */
+            text-decoration: none;
+            padding: 0.5em 1em;
+            background-color: #5a0a9b; /* Slightly darker purple for link background */
+            border-radius: 5px;
+            margin: 0 0.5em;
+        }
+        nav a:hover {
+            background-color: #7b1fa2; /* Lighter purple on hover */
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2em;
+            background: #222; /* Dark background for the content area */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1em;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 1em;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #6a0dad;
+            border-radius: 8px;
+            padding: 1em;
+            top: 100%;
+            left: 0;
+            width: 200px;
+        }
+        .dropdown-menu div {
+            padding: 0.5em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .dropdown-menu div:hover {
+            background-color: #5a0a9b;
+        }
+    </style>
+</head>
+<body>
     <header class="bg-purple-700 p-4 text-cyan-50">
         <h6 class="text-center">Welcome to Nidz Games</h6>
     </header>
+    
     <nav class="bg-black text-cyan-50">
         <div class="container mx-auto flex justify-between items-center p-4">
             <span class="text-xl font-bold">NidzGames</span>
             <ul class="flex space-x-4">
-                <li class="relative dropdown">
-                    <a href="home.html" class="hover:bg-purple-700 px-3 py-2 rounded">Home</a>
-                </li>
-                <li class="relative dropdown">
-                    <a href="playing.html" class="hover:bg-purple-700 px-3 py-2 rounded">Play now</a>
-                   
-                </li>
-                <li>
-                    <a href="contacting.html" class="ml-4 hover:bg-purple-700 px-3 py-2 rounded">Contact us</a>
-                </li>
-                <li>
-                    <a href="abouting.html" class="ml-4 hover:bg-purple-700 px-3 py-2 rounded">About</a>
-                </li></ul></div></nav>
+                <li><a href="home.html" class="hover:bg-purple-700 px-3 py-2 rounded">Home</a></li>
+                <li><a href="playing.html" class="hover:bg-purple-700 px-3 py-2 rounded">Play now</a></li>
+                <li><a href="contacting.html" class="ml-4 hover:bg-purple-700 px-3 py-2 rounded">Contact us</a></li>
+                <li><a href="abouting.html" class="ml-4 hover:bg-purple-700 px-3 py-2 rounded">About</a></li>
+            </ul>
+        </div>
+    </nav>
     
-        <div class="relative mt-20 ml-[600px]" id="dropdownButton">
-               <div 
-               onclick="toggleDropdown()"
-               class="border-solid rounded w-20 px-5 cursor-pointer font-bold">
-                   
-                   
-                   <div> <button class="bg-pink-500 w-40 rounded ">click here for more options</button></p></div>
-                   
-               </div><div 
-               id="dropdown"
-               class="bg-purple-700 rounded  hover:bg-purple-700 absolute top-[40px] p-4 hidden">
-                   <div class="cursor-pointer hover:bg-pink-500">Downloading</div>
-                   <div class="cursor-pointer hover:bg-pink-500">Online gaming</div>
-                   <div class="cursor-pointer hover:bg-pink-500">Bonuses </div>
-                   <div class="cursor-pointer hover:bg-pink-500">Buy Games</div>
-               </div></div>
-               <img src="pexels-photo-459762.webp" class="ml-8">
-               <script>
-                   function toggleDropdown(){
-                       let dropdown=document.querySelector('#dropdownButton #dropdown');
-                       dropdown.classList.toggle("hidden")
-                   }
-               </script>
+    <div class="relative mt-20 mx-auto max-w-md">
+        <div 
+            onclick="toggleDropdown()"
+            class="border-solid rounded w-full px-5 py-2 cursor-pointer font-bold bg-pink-500 text-center text-white">
+            Click here for more options
+        </div>
+        <div id="dropdown" class="dropdown-menu bg-purple-700 rounded p-4 mt-2">
+            <div>Downloading</div>
+            <div>Online gaming</div>
+            <div>Bonuses</div>
+            <div>Buy Games</div>
+        </div>
+    </div>
+    
+    <img src="pexels-photo-459762.webp" class="mx-auto mt-4">
+
+    <script>
+        function toggleDropdown() {
+            let dropdown = document.querySelector('#dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
